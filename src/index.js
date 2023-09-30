@@ -82,7 +82,7 @@ async function check() {
 
   await currentDataMessage.edit([
     `Volebná účasť: **${API_RESPONSE.currentData.attendance}%**`,
-    `Spočítaných hlasov: **${API_RESPONSE.currentData.votes_counted}**`,
+    `Spočítaných hlasov: **${API_RESPONSE.currentData.votes_counted}%**`,
     `Posledná aktualizácia: **${lastChange}**`,
   ].join("\n"));
 
@@ -94,5 +94,8 @@ async function fetchAll() {
   const body = await response.json();
   API_RESPONSE = body;
 }
+
+process.on("uncaughtException", console.log);
+process.on("unhandledRejection", console.log);
 
 client.login(process.env.DISCORD_BOT_TOKEN);
