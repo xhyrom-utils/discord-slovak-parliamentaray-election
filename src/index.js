@@ -78,7 +78,7 @@ async function check() {
   }
 
   const currentDataMessage = await channel.messages.fetch("1157715656398082139");
-  const lastChange = moment(new Date(API_RESPONSE.currentData.last_changed * 1000)).tz("Europe/Bratislava").format();
+  const lastChange = moment(new Date(API_RESPONSE.currentData.last_changed * 1000)).tz("Europe/Bratislava").format("DD/MM/YYYY HH:mm:ss");;
 
   await currentDataMessage.edit([
     `Volebná účasť: **${API_RESPONSE.currentData.attendance}%**`,
