@@ -78,11 +78,12 @@ async function check() {
   }
 
   const currentDataMessage = await channel.messages.fetch("1157715656398082139");
+  const lastChange = moment(new Date(API_RESPONSE.currentData.last_changed * 1000)).tz("Europe/Bratislava").format();
 
   await currentDataMessage.edit([
     `Volebná účasť: **${API_RESPONSE.currentData.attendance}%**`,
     `Spočítaných hlasov: **${API_RESPONSE.currentData.votes_counted}**`,
-    `Posledná aktualizácia: **${new Date(API_RESPONSE.currentData.last_changed * 1000).toLocaleString()}**`,
+    `Posledná aktualizácia: **${lastChange}**`,
   ].join("\n"));
 
   setTimeout(check, 30_000);
