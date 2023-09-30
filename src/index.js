@@ -8,7 +8,7 @@ let API_RESPONSE = {};
 let MESSAGE_IDS = [ "1157714802576216154", "1157715633136468108" ];
 let COUNTDOWN;
 
-const CLOSE_TIME = new Date(1696104000000);
+const CLOSE_TIME = new Date(1696106700000);
 
 const client = new Client({
   intents: [ IntentsBitField.Flags.Guilds ] 
